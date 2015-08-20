@@ -1,0 +1,97 @@
+{{!< default}}
+
+{{#post}}
+
+<header class="masthead" {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="header-wrapper">
+	    {{#if @blog.logo}}<figure class="logo">
+			<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+		</figure>{{/if}}
+	    <div class="title">
+	    	<a href="{{@blog.url}}">
+	        	<h1>{{@blog.title}}</h1>
+	        </a>
+	      	<p>{{@blog.description}}</p>
+	      	<div class="line"></div>
+	    </div>
+	    <div class="bottom">
+			<ul class="menu">
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-github"></i></a></li>
+				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+			</ul>
+	    </div>
+  	</div>
+</header>
+
+<section class="container">
+  
+	<article class="{{post_class}} single">
+        <header class="header-post">
+        	<span class="meta-post">
+            	<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
+        	</span>
+          	<h2 class="title-post">{{{title}}}</h2>
+        </header>
+
+        <section class="content-post">
+			{{content}}
+		</section>
+
+		<footer class="footer-post">
+
+			{{#author}}
+			<section class="author-post">
+				{{#if image}}
+					<figure class="avatar">
+						<img src="{{image}}" alt="{{name}}">
+					</figure>
+				{{/if}}
+
+				<div class="bio">
+					<span>Autor</span>
+					<h4 class="author-name">
+						<a href="{{url}}">{{name}}</a>
+					</h4>
+					{{#if bio}}
+						<p>{{{bio}}}</p>
+					{{/if}}
+				</div>
+			</section>
+			{{/author}}
+
+			<section class="share">
+				<h4>Comparte</h4>
+				<a href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" class="fa fa-twitter" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					<span class="hidden">Twitter</span>
+				</a>
+
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" class="fa fa-facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<span class="hidden">Facebook</span>
+				</a>
+
+				<a href="https://plus.google.com/share?url={{url absolute="true"}}" class="fa fa-google-plus" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+					<span class="hidden">Google+</span>
+				</a>
+			</section>
+		</footer>
+
+		<section class="comments-post">
+			<div id="disqus_thread"></div>
+		</section>
+
+		<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES * * */
+		    var disqus_shortname = 'germanencinas';
+		    
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function() {
+		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    })();
+		</script>
+
+		{{/post}}
+  	</article>
+</section>
