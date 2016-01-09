@@ -3,7 +3,7 @@ Marceline
 
 A happy theme for [Ghost](https://github.com/tryghost/ghost/) by [Germán Encinas](http://germanencinas.com/).
 
-View Marceline in action [here](http://germanencinas.com/).
+View Marceline in action [here](http://germanencinas.com/marceline).
 
 ## Features
 
