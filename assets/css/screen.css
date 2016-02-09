@@ -569,12 +569,6 @@ img {
 .masthead .header-wrapper .logo + .title {
   position: initial;
 }
-.masthead .header-wrapper .title {
-  position: absolute;
-  top: 20%;
-  left: 0;
-  right: 0;
-}
 .masthead .header-wrapper .title a {
   position: relative;
   top: 50%;
